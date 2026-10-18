@@ -1,6 +1,8 @@
 services:
   backend:
-    build: ${BACKEND_DIR:-../backend}
+    build:
+      context: ${BACKEND_DIR:-../backend}
+      network: host
     network_mode: host
     environment:
       PORT: ${BACKEND_PORT:-3100}
@@ -17,7 +19,9 @@ services:
       retries: 15
 
   frontend:
-    build: ${FRONTEND_DIR:-../frontend}
+    build:
+      context: ${FRONTEND_DIR:-../frontend}
+      network: host
     network_mode: host
     environment:
       PORT: ${FRONTEND_PORT:-5273}
