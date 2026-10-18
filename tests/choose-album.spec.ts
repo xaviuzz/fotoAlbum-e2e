@@ -22,5 +22,5 @@ test("choosing an album from the catalogue opens its making page", async ({
 	await expect(reference).toBeVisible();
 
 	const back = page.getByRole("link", { name: "Volver al catálogo" });
-	await expect(back).toBeVisible();
+	await expect(back).toHaveCount(0);
 });
