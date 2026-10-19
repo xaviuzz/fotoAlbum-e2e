@@ -6,6 +6,7 @@ services:
     network_mode: host
     environment:
       PORT: ${BACKEND_PORT:-3100}
+      DATA_DIR: /tmp/fotoalbum-data
     healthcheck:
       test:
         - CMD
