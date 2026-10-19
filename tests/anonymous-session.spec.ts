@@ -4,7 +4,7 @@ test("the chosen album survives a reload and starting over returns to the catalo
 	page,
 }) => {
 	await page.goto("/");
-	await page.getByRole("link", { name: /Retrato de bolsillo/ }).click();
+	await page.getByRole("button", { name: /Retrato de bolsillo/ }).click();
 
 	const making = page.getByRole("heading", { name: "Retrato de bolsillo" });
 	await expect(making).toBeVisible();
@@ -22,7 +22,7 @@ test("the chosen album survives a reload and starting over returns to the catalo
 	const home = page.getByRole("heading", { name: "Elige un álbum" });
 	await expect(home).toBeVisible();
 
-	const cards = page.getByRole("link", {
+	const cards = page.getByRole("button", {
 		name: /Cuadrado clásico|Retrato de bolsillo|Paisaje grande/,
 	});
 	await expect(cards).toHaveCount(3);
