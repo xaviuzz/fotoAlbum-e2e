@@ -21,4 +21,6 @@ A new test needs a reason it cannot live in `backend/` or `frontend/`: e2e is sl
 
 An e2e step for behavior already built has no natural red. Write the test with a deliberate fault (a wrong fixture path or locator), watch it fail, then correct it. This proves the test can fail without touching product code.
 
+A change to a role or label that specs already query (a link that becomes a button) edits every such spec. Search `tests/` for the old role before the first run.
+
 Photo fixtures live in `tests/fixtures/`. The backend service keeps its photos in a container directory (`DATA_DIR` in `compose.yaml`), so every run starts with an empty tray.
